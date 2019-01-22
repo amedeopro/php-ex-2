@@ -28,10 +28,12 @@ $partite = [
   ]
 ];
 
-  foreach ($partite as $k => $partita) {
-    var_dump($partita);
-    die();
-  }
-
-
  ?>
+
+<ul>
+  <?php   foreach ($partite as $partita) { ?>
+
+    <li>Partita: <?php echo "$partita[squadra_casa]"; ?> Vs. <?php echo "$partita[squadra_ospite]"; ?> | <?php echo "$partita[punti_casa]"; ?> - <?php echo "$partita[punti_ospite]"; ?></li>  
+
+  <?php   } ?>
+</ul>
