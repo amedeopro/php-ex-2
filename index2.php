@@ -18,13 +18,19 @@ $partite = [
     'squadra_casa' => 'Team2',
     'squadra_ospite' => 'Team3',
     'punti_casa' => 84,
-    'punti_ospite' => 65
+    'punti_ospite' => NULL
   ],
   [
     'squadra_casa' => 'Team4',
     'squadra_ospite' => 'Team5',
     'punti_casa' => 101,
     'punti_ospite' => 103
+  ],
+  [
+    'squadra_casa' => 'Team6',
+    'squadra_ospite' => 'Team7',
+    'punti_casa' => 46,
+    'punti_ospite' => NULL
   ]
 ];
 
@@ -33,7 +39,13 @@ $partite = [
 <ul>
   <?php   foreach ($partite as $partita) { ?>
 
-    <li>Partita: <?php echo "$partita[squadra_casa]"; ?> Vs. <?php echo "$partita[squadra_ospite]"; ?> | <?php echo "$partita[punti_casa]"; ?> - <?php echo "$partita[punti_ospite]"; ?></li>  
+    <li>Partita: <?php echo "$partita[squadra_casa]"; ?> Vs. <?php echo "$partita[squadra_ospite]"; ?> |
+      <?php if ($partita[punti_casa] === NULL || $partita[punti_ospite] === NULL ) { ?>
+        Partita ancora da disputare
+      <?php  } else { ?>
+        <?php echo "$partita[punti_casa]"; ?> - <?php echo "$partita[punti_ospite]"; ?>
+      <?php } ?>
+      </li>
 
   <?php   } ?>
 </ul>
