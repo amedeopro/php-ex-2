@@ -8,17 +8,13 @@
 
     <?php $password = $_GET['password']; ?>
 
-      <?php if ($password === 'boolean') { ?>
-        <h2 style='color: green;'>Password Corretta</h2>
-      <?php } else if ($password === NULL) { ?>
+      <?php if (!empty($password) && $password === 'boolean') { ?>
+        <h2 style='color: green;'>Accesso Riuscito</h2>
+      <?php } else { ?>
 
-        <h2 style='color: yellow;'>Devi inserire la password</h2>
+        <h2 style='color: red;'>Accesso Negato</h2>
 
-      <?php } else if ($password !== 'boolean')  { ?>
-
-        <h2 style='color: red;'>Password errata</h2>
-
-      <?php }; ?>
+      <?php }  ?>
 
 
 
